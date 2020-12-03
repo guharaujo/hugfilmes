@@ -28,7 +28,7 @@ body{
 } 
 
 /* slider */
-#slider {
+/* #slider {
     margin: 0 auto;
     width: 100%;
     max-width: 100%;
@@ -91,7 +91,7 @@ body{
 }
 .slide-content {
     padding: 10px;
-}
+} */
 #controls {
     margin: -130px 0 0 0;
     width: 100%;
@@ -128,7 +128,7 @@ body{
 
 .avaliacao {
     display: flex;
-    height: 100%;
+    height: 100px;
     flex-direction: column;
 }
 
@@ -160,11 +160,27 @@ body{
 }
 
 .divnov {
-    background-color: darkgrey;
+    background-color: #F8F9FA;
 
 }
 
 .divult {
-    background-color: darkgray;
+    background-color: #F8F9FA;
     
+}
+
+.cardPesquisa {
+    display: flex;
+    flex-direction: row;
+    width: 700px;
+    height: 400px;
+    background-color: white;
+    margin-bottom: 20px;
+}
+
+.imagemPesquisa {
+    height: 300px;
+    width: 200px;
+    margin-top: 40px;
+    margin-left: 30px;
 }
