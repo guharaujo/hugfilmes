@@ -4,6 +4,8 @@ const API_KEY_SEARCH = '867304b3aa01eb018ca96fc57f0e53e5'
 async function RealizarPesquisa() {
     let nomeFilme = $('#search').val();
 
+    sessionStorage.setItem('busca', nomeFilme)
+
     return await $.ajax({
         url: TMDB_ENDPOINT_BASE_SEARCH + "/search/movie",
         data: {
@@ -17,9 +19,9 @@ async function RealizarPesquisa() {
 
 $(document).ready(function() {
     $('#btn_search').click(function(){
-        let search = RealizarPesquisa().then(function(data){
+        let search = RealizarPesquisa().then(function(data) {
+            console.log(data)
             return data;
         });
-        
     });
 });

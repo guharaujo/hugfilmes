@@ -52,11 +52,9 @@ async function pegaImagem(movie_id) {
 $(document).ready(function() {
     pegaLancamento().then((movie) => {
         pegaImagem(movie.id).then((infoImagem) => {
-            if(infoImagem.posters[0].file_path)
-                $('#imagemLancamento').append(`<a href=\"https://www.themoviedb.org/movie/${movie.id}-${movie.title}\"><img style=\"width: 150px;\" src=\"${TMDB_IMAGES_ENDPOINT_BASE + infoImagem.posters[0].file_path}\"></img></a>`)
-            else
-                $('#imagemLancamento').html('<p>Sem imagem disponivel</p>')
-        })
+            $('#imagemLancamento').append(`<a href=\"https://www.themoviedb.org/movie/${movie.id}-${movie.title}\"><img style=\"width: 150px;\" src=\"${TMDB_IMAGES_ENDPOINT_BASE + infoImagem.posters[0].file_path}\"></img></a>`)
+        }).catch((err) => $('#imagemLancamento').html('<p>Sem imagem disponivel</p>'))
+
         $('#nomeDoLancamento').html(movie.original_title)
         $('#sinopse').html(movie.overview)
     })
